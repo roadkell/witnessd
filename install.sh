@@ -22,8 +22,8 @@ echo "Systemd service drop-in config file: ${dropin_conf}"
 echo "Creating drop-in directory and config file..."
 
 set -o noclobber
-# mkdir "${dropins_dir}"
-cat << EOF # > "${dropin_conf}"
+mkdir "${dropins_dir}"
+cat << EOF > "${dropin_conf}"
 # ${dropin_conf}
 [Unit]
 Description="Run an executable when local path gets modified"
@@ -36,7 +36,7 @@ EOF
 echo "Done!"
 echo "Enabling systemd service and path units..."
 
-# systemctl --user enable "${service_unit}"
-# systemctl --user enable --now "${path_unit}"
+systemctl --user enable "${service_unit}"
+systemctl --user enable --now "${path_unit}"
 
 echo "Done!"
