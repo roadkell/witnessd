@@ -1,0 +1,16 @@
+# $XDG_CONFIG_HOME/systemd/user/path-watcher@.path
+#
+# Watch local path for changes.
+# See additional configs in path-watcher@*.service.d/
+# To instantiate it, first generate a proper filename:
+# systemd-escape --path --template path-watcher@.path "/full/path/"
+
+[Unit]
+Description="Watch local path for changes"
+
+[Path]
+PathChanged=%f
+
+[Install]
+# There is no multi-user in --user targets, so we use default (=graphical)
+WantedBy=default.target

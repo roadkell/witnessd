@@ -1,0 +1,20 @@
+# $XDG_CONFIG_HOME/systemd/user/path-watcher@.service
+#
+# Run an executable when local path gets modified.
+# See additional configs in path-watcher@*.service.d/
+# To instantiate it, first generate a proper filename:
+# systemd-escape --path --template path-watcher@.service "/full/path/"
+
+[Unit]
+Description="Run an executable when local path gets modified"
+
+[Service]
+Type=oneshot
+# Run the executable defined in path-watcher@*.service.d/*.conf
+# Proper argument passing:
+# https://www.freedesktop.org/software/systemd/man/systemd.service.html
+ExecStart=${PATH_WATCHER_EXEC} %f $PATH_WATCHER_ARGS
+
+[Install]
+# There is no multi-user in --user targets, so we use default (=graphical)
+WantedBy=default.target
