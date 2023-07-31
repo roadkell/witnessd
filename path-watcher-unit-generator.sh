@@ -1,7 +1,7 @@
 #!/bin/sh
 #
-# Generate systemd service and path units to watch files/dirs for changes and
-# execute things when they are detected.
+# Generate systemd service and path units for systemd-path-watcher, and add them
+# to user's local systemd configuration
 
 echo "Warning! This script has no safety/sanity checks. Use at your own risk."
 echo "Path to be watched: $1"
