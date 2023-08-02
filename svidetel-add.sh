@@ -1,14 +1,14 @@
 #!/bin/sh
 #
-# Generate systemd service and path units for systemd-path-watcher, and add them
+# Generate systemd service and path units for systemd path watcher, and add them
 # to user's local systemd configuration
 
 echo "Warning! This script has no safety/sanity checks. Use at your own risk."
 echo "Path to be watched: $1"
 echo "Executable to invoke (path must be in systemd format, e.g. %h/.local/bin/myscript.sh): $2"
 
-service_unit=$(systemd-escape --path --template path-watcher@.service "$1")
-path_unit=$(systemd-escape --path --template path-watcher@.path "$1")
+service_unit=$(systemd-escape --path --template svidetel@.service "$1")
+path_unit=$(systemd-escape --path --template svidetel@.path "$1")
 exec_path="$2"
 dropins_dir="${XDG_CONFIG_HOME:-$HOME/.config}/systemd/user/${service_unit}.d"
 dropin_conf="${XDG_CONFIG_HOME:-$HOME/.config}/systemd/user/${service_unit}.d/${exec_path##*/}.conf"
@@ -29,14 +29,14 @@ cat << EOF > "${dropin_conf}"
 Description="Run an executable when local path gets modified"
 
 [Service]
-Environment=PATH_WATCHER_EXEC="${exec_path}"
-Environment=PATH_WATCHER_ARGS="$@"
+Environment=SVIDETEL_EXEC="${exec_path}"
+Environment=SVIDETEL_ARGS="$@"
 EOF
 
 echo "Done!"
 echo "Enabling systemd service and path units..."
 
-systemctl --user enable "${service_unit}"
-systemctl --user enable --now "${path_unit}"
+# systemctl --user enable "${service_unit}"
+# systemctl --user enable --now "${path_unit}"
 
 echo "Done!"

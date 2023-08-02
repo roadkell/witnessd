@@ -1,9 +1,9 @@
-# $XDG_CONFIG_HOME/systemd/user/path-watcher@.path
+# $XDG_CONFIG_HOME/systemd/user/svidetel@.path
 #
 # Watch local path for changes.
-# See additional configs in path-watcher@*.service.d/
+# See additional configs in svidetel@*.service.d/
 # To instantiate it, first generate a proper filename:
-# systemd-escape --path --template path-watcher@.path "/full/path/"
+# systemd-escape --path --template svidetel@.path "/full/path/"
 
 [Unit]
 Description="Watch local path for changes"
