@@ -1,8 +1,8 @@
 ## Svidetel: file/directory event watcher for systemd ##
 ```
      ◟◟◟
-    ⎛ಠ_ಠ⎞
-   _⎝  _⎠_
+    ⎛ಠ ಠ⎞
+   _⎝ ‾_⎠_
   /  \/   \
  //      \ \
 (/       / /
