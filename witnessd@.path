@@ -1,9 +1,9 @@
-# $XDG_CONFIG_HOME/systemd/user/svidetel@.path
+# $XDG_CONFIG_HOME/systemd/user/witnessd@.path
 #
 # Watch local path for changes.
-# See additional configs in svidetel@*.service.d/
+# See additional configs in witnessd@*.service.d/
 # To instantiate it, first generate a proper filename:
-# systemd-escape --path --template svidetel@.path "/full/path/"
+# systemd-escape --path --template witnessd@.path "/full/path/"
 
 [Unit]
 Description="Watch local path for changes"

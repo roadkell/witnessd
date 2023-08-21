@@ -1,4 +1,4 @@
-## Svidetel: file/directory event watcher for systemd ##
+## witnessd: file/directory event watcher for systemd ##
 ```
      ◟◟◟
     ⎛ಠ ಠ⎞

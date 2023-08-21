@@ -1,19 +1,19 @@
-# $XDG_CONFIG_HOME/systemd/user/svidetel@.service
+# $XDG_CONFIG_HOME/systemd/user/witnessd@.service
 #
 # Run an executable when local path gets modified.
-# See additional configs in svidetel@*.service.d/
+# See additional configs in witnessd@*.service.d/
 # To instantiate it, first generate a proper filename:
-# systemd-escape --path --template svidetel@.service "/full/path/"
+# systemd-escape --path --template witnessd@.service "/full/path/"
 
 [Unit]
 Description="Run an executable when local path gets modified"
 
 [Service]
 Type=oneshot
-# Run the executable defined in svidetel@*.service.d/*.conf
+# Run the executable defined in witnessd@*.service.d/*.conf
 # Proper argument passing:
 # https://www.freedesktop.org/software/systemd/man/systemd.service.html
-ExecStart=${SVIDETEL_EXEC} %f $SVIDETEL_ARGS
+ExecStart=${WITNESSD_EXEC} %f $WITNESSD_ARGS
 
 [Install]
 # There is no multi-user in --user targets, so we use default (=graphical)
