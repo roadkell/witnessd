@@ -18,4 +18,4 @@
 
 ### License ###
 
-[Hippocratic License 3.0](https://github.com/roadkell/wiktion/blob/main/LICENSE.md)
+[Hippocratic License 3.0](https://github.com/roadkell/witnessd/blob/main/LICENSE.md)
