@@ -7,6 +7,7 @@
 
 [Unit]
 Description="Watch local path for changes"
+Documentation=https://github.com/roadkell/witnessd
 
 [Path]
 PathChanged=%f
