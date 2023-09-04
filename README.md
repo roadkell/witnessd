@@ -30,7 +30,7 @@ witnessd-add.sh path/to/watch executable/to/invoke [arguments for the executable
 ```
 `witnessd-add.sh` copies the template units into users' systemd config dir (`$HOME/.config/systemd/user/` by default), instantiates them with given arguments, and enables them.
 
-Watched path must be absolute, but it may contain expandables (they'll be expanded by the script), e.g. `$HOME/somedir/`.
+Watched path must be absolute, but it may contain variables (they'll be expanded by the script), e.g. `$HOME/somedir/`.
 
 Executable path may contain [systemd-format specifiers](https://www.freedesktop.org/software/systemd/man/systemd.unit.html#Specifiers), e.g. `%h/.local/bin/myscript.sh`.
 
