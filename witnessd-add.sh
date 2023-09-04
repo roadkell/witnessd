@@ -2,6 +2,7 @@
 #
 # Generate systemd service and path units for witnessd, and add them
 # to user's local systemd configuration
+# https://github.com/roadkell/witnessd
 
 set -Eeuo pipefail
 
