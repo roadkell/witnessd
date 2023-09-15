@@ -26,13 +26,19 @@ Other possible options are described [here](https://www.freedesktop.org/software
 
 Download repository contents, examine the script and unit files, and run
 ```
-witnessd-add.sh path/to/watch executable/to/invoke [arguments for the executable]
+./witnessd-add.sh path/to/watch executable/to/invoke [arguments for the executable]
 ```
 `witnessd-add.sh` copies the template units into users' systemd config dir (`$HOME/.config/systemd/user/` by default), instantiates them with given arguments, and enables them.
 
 Watched path must be absolute, but it may contain variables (they'll be expanded by the script), e.g. `$HOME/somedir/`.
 
 Executable path may contain [systemd-format specifiers](https://www.freedesktop.org/software/systemd/man/systemd.unit.html#Specifiers), e.g. `%h/.local/bin/myscript.sh`.
+
+### Why ###
+
+There are existing projects like [entr](http://eradman.com/entrproject/), [Watchman](https://facebook.github.io/watchman/) and [fswatch](https://emcrisostomo.github.io/fswatch/), but they seemed like an overkill for me, especially given that all the necessary facilities are already present in systemd.
+
+This project doesn't have dependencies beside systemd itself. There's no need for third-party software. On the downside, though, it is not cross-platform, and if fine-tuning is required, it may be necessary to dig into the systemd documentation.
 
 ### License ###
 
