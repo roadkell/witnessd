@@ -1,20 +1,20 @@
 # $XDG_CONFIG_HOME/systemd/user/witnessd@.service
 #
-# Run an executable when local path gets modified.
-# See additional configs in witnessd@*.service.d/
+# Run a command when local path gets modified.
+# Additional configs should be placed in witnessd@*.service.d/
 # To instantiate it, first generate a proper filename:
 # systemd-escape --path --template witnessd@.service "/full/path/"
 
 [Unit]
-Description="Run an executable when local path gets modified"
+Description="Run a command when local path gets modified"
 Documentation=https://github.com/roadkell/witnessd
 
 [Service]
 Type=oneshot
-# Run the executable defined in witnessd@*.service.d/*.conf
+# Run the command defined in witnessd@*.service.d/*.conf
 # Proper argument passing:
 # https://www.freedesktop.org/software/systemd/man/systemd.service.html
-ExecStart=${WITNESSD_EXEC} %f $WITNESSD_ARGS
+ExecStart=${WITNESSD_CMD} %f $WITNESSD_ARGS
 
 [Install]
 # There is no multi-user in --user targets, so we use default (=graphical)

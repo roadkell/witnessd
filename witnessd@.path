@@ -1,7 +1,7 @@
 # $XDG_CONFIG_HOME/systemd/user/witnessd@.path
 #
 # Watch local path for changes.
-# See additional configs in witnessd@*.service.d/
+# Additional configs should be placed in witnessd@*.service.d/
 # To instantiate it, first generate a proper filename:
 # systemd-escape --path --template witnessd@.path "/full/path/"
 
